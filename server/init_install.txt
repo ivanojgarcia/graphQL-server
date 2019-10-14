@@ -1,0 +1,26 @@
+/* Instalaciones para comenzar un proyecto en Node  */
+
+npm init 
+/* llenar los datos o dar Enter a las opciones */
+
+
+// Permite recargar el sistema cuando se guarde cualquier archivo
+npm install --save nodemon express
+
+// Para poder usar las nuevas dependencias de EC6 y utilizar Import
+npm install --save-dev babel-cli babel-preset-env babel-preset-stage-0
+
+npm install --save graphql-tools graphql-import
+npm install --save mongoose
+
+
+/* Configurar Apollo server */
+
+npm install --save apollo-server-express
+
+/* Install react app */
+npm install -g create-react-app
+
+/* Configurar react */
+npm install --save apollo-boost react-apollo graphql graphql-tag
+npm install --save react-router-dom

@@ -1,0 +1,63 @@
+    type Cliente {
+        id: ID
+        nombre: String
+        apellido: String
+        empresa: String
+        emails: [Email]
+        edad: Int
+        tipo: TipoCliente
+        pedidos: [Pedido]
+    }
+    
+    type Pedido {
+        producto: String
+        precio: Int
+    }
+
+    type Email {
+        email: String
+    }
+
+    enum TipoCliente {
+        BASICO
+        PREMIUM
+    }
+
+    type Query {
+        getClientes(limite: Int, offset:Int) : [Cliente]
+        getCliente(id: ID!) : Cliente
+        totalClientes : String
+    }
+
+    input PedidoInput {
+        producto: String
+        precio: Int
+    }
+
+    input EmailInput {
+        email: String
+    }
+
+    input ClienteInput {
+        id: ID,
+        nombre: String!
+        apellido: String!
+        empresa: String!        
+        emails: [EmailInput]
+        edad: Int
+        tipo: TipoCliente
+        pedidos: [PedidoInput]
+    }
+    """ Mutatios para crear nuevos clientes """
+    type Mutation {
+        #Nombre del resolvers , Input con datos y el valor que retorna
+
+        """ Te permite crear nuevos clientes """
+        crearCliente(input: ClienteInput) : Cliente
+
+        """ Te permite Actualizar los clientes, recibe como parametros un input con el ID """
+        actualizarCliente(input: ClienteInput) : Cliente
+
+        """ Te permite Eliminar clientes recibe como unico parametro l ID y retorna un String """
+        eliminarCliente( id: ID! ) : String
+    }
