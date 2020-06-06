@@ -9,7 +9,7 @@
   "author": "Ivano García",
   "license": "ISC",
   "dependencies": {
-    "apollo-server-express": "^2.6.9",
+    "apollo-server-express": "^2.14.2",
     "express": "^4.17.1",
     "express-graphql": "^0.8.0",
     "graphql": "^14.4.2",
